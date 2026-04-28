@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "首頁";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <div class="col-12">
+            <h1 id="aspnetTitle">ASP.NET Core</h1>
+            <p class="lead">ASP.NET Core 是以跨平台與現代化中介軟體管線為核心的 Web 開發框架，適合作為原 ASP.NET Web Forms 專案的升級目標。</p>
+            <p>
+                <a href="https://learn.microsoft.com/aspnet/core" class="btn btn-primary btn-md">Learn more &raquo;</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="row g-4 mt-1">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Getting started</h2>
+            <p>
+                原本的 Web Forms 頁面生命週期、Master Page 與伺服器控制項，在 ASP.NET Core 中通常會改由 MVC 或 Razor Pages 的路由、Layout 與標籤輔助程式取代。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/aspnet/core/mvc/overview">Learn more &raquo;</a>
+            </p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Get more libraries</h2>
+            <p>
+                NuGet 在 .NET Core 仍是標準套件管理方式，但相依性改以 SDK-style 專案與 PackageReference 管理，不再沿用 packages.config。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://www.nuget.org/">Learn more &raquo;</a>
+            </p>
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Hosting</h2>
+            <p>
+                升級後可部署到 IIS、Windows Service、Linux、Container 或雲端平台，不再綁定傳統 System.Web 執行模型。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/aspnet/core/host-and-deploy/">Learn more &raquo;</a>
+            </p>
+        </section>
+    </div>
+</main>
