@@ -7,7 +7,9 @@ Module Program
         Dim builder = WebApplication.CreateBuilder(args)
 
         ' 加入 MVC Controller + View 服務
-        builder.Services.AddControllersWithViews()
+        ' AddRazorRuntimeCompilation：VB.NET 專案無法在建置時自動編譯 .cshtml，
+        ' 需在執行階段從磁碟載入 Razor View 檔案。
+        builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation()
 
         Dim app = builder.Build()
 

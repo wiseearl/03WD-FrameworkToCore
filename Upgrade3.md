@@ -158,6 +158,34 @@ Framework/WebApplication1/           →    Core3/WebApplication1.Core3/
 - `Web Forms ScriptManager`：JavaScript 由 `wwwroot/lib/` 下的靜態 CDN 套件取代。
 - `Site.Mobile.Master`：行動版專屬 Master Page，Bootstrap 響應式設計已涵蓋行動裝置。
 
+## 11.5. 執行階段問題排除（VB.NET 特有）
+
+### 問題：`The view 'Index' was not found`
+
+**原因：** VB.NET SDK-style Web 專案的 MSBuild 工具鏈，不像 C# 專案一樣在建置時自動觸發 Razor SDK 的 `.cshtml` 預編譯流程。
+因此雖然 `.cshtml` 檔案存在於磁碟，執行階段的 MVC View Engine 找不到已編譯的 View DLL。
+
+**解法：** 加入 `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation` 套件（net8.0 版本），
+並在 `Program.vb` 中改呼叫 `.AddRazorRuntimeCompilation()`，讓 View Engine 在執行階段直接從磁碟的 `.cshtml` 檔案編譯。
+
+```powershell
+# 加入套件（注意需指定 --version 8.0.0 以符合 net8.0）
+& "C:\Program Files\dotnet\dotnet.exe" add .\Core3\WebApplication1.Core3\WebApplication1.Core3.vbproj `
+    package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation --version 8.0.0
+```
+
+`Program.vb` 修改：
+
+```vb
+' 前：
+builder.Services.AddControllersWithViews()
+
+' 後：
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation()
+```
+
+
+
 ## 12. 驗證方式
 
 在根目錄執行：
