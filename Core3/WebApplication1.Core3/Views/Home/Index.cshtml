@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "首頁";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <div class="col-12">
+            <h1 id="aspnetTitle">ASP.NET Core（VB.NET MVC）</h1>
+            <p class="lead">
+                本頁由原本的 <code>Default.aspx</code> 遷移而來。<br />
+                Core3 採用 <strong>ASP.NET Core MVC + VB.NET</strong>，
+                示範 VB.NET 可在 .NET 8 的 MVC 架構下繼續使用。
+            </p>
+            <p>
+                <a href="https://learn.microsoft.com/aspnet/core" class="btn btn-primary btn-md">Learn more &raquo;</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="row g-4 mt-1">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Getting started</h2>
+            <p>
+                原本的 Web Forms 頁面生命週期、Master Page 與伺服器控制項，
+                在 ASP.NET Core 中改由 MVC Controller、Razor View 與 Layout 取代。
+                VB.NET 的 <code>HomeController.vb</code> 完全取代原本的 code-behind。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/aspnet/core/mvc/overview">Learn more &raquo;</a>
+            </p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">VB.NET on .NET 8</h2>
+            <p>
+                .NET 8 持續支援 VB.NET 語言。SDK-style 專案檔（<code>.vbproj</code>）
+                搭配 <code>PackageReference</code>，不再需要 <code>packages.config</code> 或 Web Forms 特有的 NuGet 套件。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/dotnet/visual-basic/">Learn more &raquo;</a>
+            </p>
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Hosting</h2>
+            <p>
+                升級後可部署到 IIS、Windows Service、Linux、Container 或雲端平台，
+                不再綁定傳統 <code>System.Web</code> 執行模型。
+                <code>Program.vb</code> 以 <code>Module Program / Sub Main</code> 作為啟動入口。
+            </p>
+            <p>
+                <a class="btn btn-outline-secondary" href="https://learn.microsoft.com/aspnet/core/host-and-deploy/">Learn more &raquo;</a>
+            </p>
+        </section>
+    </div>
+</main>
